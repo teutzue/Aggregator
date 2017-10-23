@@ -1,3 +1,4 @@
+package core;
 import com.rabbitmq.client.*;
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -27,7 +28,7 @@ public class AggregatorReceiver {
                 AggregatorService as = new AggregatorService();
                 AggregatorSender ag = new AggregatorSender();
                 try {
-                    JSONObject obj = as.processMessage(message);
+                    JSONObject obj = as.getBestQuote(message);
                     ag.sendToClient(obj.toString());
                 } catch (JSONException e) {
                     e.printStackTrace();

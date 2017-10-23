@@ -1,3 +1,4 @@
+package core;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -8,7 +9,7 @@ public class AggregatorService {
 
     ArrayList<String> list = new ArrayList<String>();
 
-    public JSONObject processMessage(String quotes) throws JSONException {
+    public JSONObject getBestQuote(String quotes) throws JSONException {
         //choose the best quote :)
         //String quotes = "[{\"interestRate\":3.6399999999999997,\"bank\":\"NordeaBank\",\"ssn\":1234566543},{\"interestRate\":5.5,\"bank\":\"BankOfNorrebro\",\"ssn\":1605789787}]";
         JSONArray newJArray = new JSONArray(quotes);
